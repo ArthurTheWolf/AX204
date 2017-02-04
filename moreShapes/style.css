@@ -1,0 +1,9 @@
+body {
+	background-color: black;
+}
+canvas {
+	border: 2px dashed cyan;
+}
+h1 {
+	color: white;
+}
