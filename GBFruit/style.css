@@ -1,0 +1,10 @@
+body {
+	background-color: linen;
+}
+canvas {
+	border: solid 3px gold
+}
+div {
+	display: flex;
+
+}
