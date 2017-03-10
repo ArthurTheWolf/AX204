@@ -55,6 +55,7 @@ function create(){
 function update(){
 	//Having collision between player and ground
 	game.physics.arcade.collide(player, platforms)
+	game.physics.arcade.collide(stars, platforms)
 	//when left and right key are pressed
 	if (cursors.left.isDown){
 		player.body.velocity.x = -150;
