@@ -39,6 +39,16 @@ function create(){
 	player.animations.add('right',[5,6,7,8],10,true);
 	//add cursors as keyboard input to control the player
 	cursors = game.input.keyboard.createCursorKeys();
+	//add a group of stars
+	stars = game.add.group();
+	stars.enableBody = true;
+	//use a for loop to creat 12 stars evenly spaced
+	for (var i=0; i<12; i++){
+		//creating a star
+		var star = stars.create(70*i, 20, 'star');
+		star.body.gravity.y =200;
+		star.body.bounce.y = 0.6 + Math.random()*0.3;
+	}
 
 }
 
