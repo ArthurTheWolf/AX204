@@ -54,6 +54,7 @@ function update(){
 		player.animations.play('right')
 	}else {
 		player.animations.stop();
+		player.body.velocity.x = 0;
 		player.frame = 4;
 	}
 
