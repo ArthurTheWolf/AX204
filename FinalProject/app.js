@@ -28,6 +28,16 @@ function create(){
 	ledge.body.immovable = true;
 	ledge = platforms.create(-150, 250, 'ground');
 	ledge.body.immovable = true;
+	//Add a player to my canvas
+	player = game.add.sprite(32, game.world.height-150,'dude')
+	game.physics.aracade.enable(player);
+	player.body.bounce.y= 0.2;
+	player.body.gravity.y = 300;
+	//Defining our animations
+	player.animations.add('left',[0,1,2,3],10,true);
+	player.animations.add('right',[5,6,7,8],10,true);
+
+
 
 
 }
