@@ -37,15 +37,25 @@ function create(){
 	//Defining our animations
 	player.animations.add('left',[0,1,2,3],10,true);
 	player.animations.add('right',[5,6,7,8],10,true);
-
-
-
-
-
+	//add cursors as keyboard input to control the player
+	cursors = game.input.keyboard.createCursorKeys();
 
 }
 
 function update(){
-	
+	//Having collision between player and ground
+	game.physics.arcade.collide(player, platforms)
+	//when left and right key are pressed
+	if (cursors.left.isDown){
+		player.body.velocity.x = -150;
+		player.animations.play('left')
+	} else if (cursors.right.isDown){
+		player.body.velocity.x = 150;
+		player.animations.play('right')
+	}else {
+		player.animations.stop();
+		player.frame = 4;
+	}
+
 }
 
