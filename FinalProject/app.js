@@ -57,6 +57,10 @@ function update(){
 		player.body.velocity.x = 0;
 		player.frame = 4;
 	}
+	//player can jump when up key is pressed and when it is touching the platform
+	if(cursors.up.isDown && player.body.touching.down){
+		player.body.velocity.y = -300;
+	}
 
 }
 
