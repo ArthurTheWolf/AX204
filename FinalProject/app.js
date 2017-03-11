@@ -101,7 +101,7 @@ function update(){
 		//Making the text reflect the score
 		scoretext.setText(score);
 		//Create a new star everytime
-		star = stars.create(Math.floor(Math.random()*750, 0, 'star');
+		star = stars.create(Math.floor(Math.random()*750), 0, 'star');
 		star.body.gravity.y =200;
 		star.body.bounce.y = 0.6 + Math.random()*0.3;
 	}
