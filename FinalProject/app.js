@@ -49,6 +49,24 @@ function create(){
 		star.body.gravity.y =200;
 		star.body.bounce.y = 0.6 + Math.random()*0.3;
 	}
+	  // Setting style for text
+   var style = { font: "bold 32px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" };
+    //  The Text is positioned at these coordinates within textbound
+    scorelabel = game.add.text(-60, 0, "Your score is: ", style);
+    scoretext = game.add.text(70, 0, score, style);
+    scorelabel.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
+    scoretext.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
+    //  We'll set the bounds to be from x0, y520 (top down) and be 800px wide by 100px high
+    scorelabel.setTextBounds(0, 520, 800, 100);
+    scoretext.setTextBounds(0, 520, 800, 100);
+    //  Doing the same for lives count
+    lifelabel = game.add.text(-300, 0, "Lives: ", style);
+    lifetext = game.add.text(-240, 0, life, style);
+    lifelabel.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
+    lifetext.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
+    //  We'll set the bounds to be from x0, y520 (top down) and be 800px wide by 100px high
+    lifelabel.setTextBounds(0, 0, 800, 100);
+    lifetext.setTextBounds(0, 0, 800, 100);
 
 }
 
@@ -72,6 +90,22 @@ function update(){
 	if(cursors.up.isDown && player.body.touching.down){
 		player.body.velocity.y = -300;
 	}
+	//Collect stars when star overlaps with player
+	game.physics.arcade.overlap(player, stars, collectStar, null, this);
+	//Defining collect star function
+	function collectStar(player, star){
+		//remove star from screen
+		star.kill();
+		//Update score
+		score = score + 1
+		//Making the text reflect the score
+		scoretext.setText(score);
+		//Create a new star everytime
+		star = stars.create(Math.floor(Math.random()*750, 0, 'star');
+		star.body.gravity.y =200;
+		star.body.bounce.y = 0.6 + Math.random()*0.3;
+	}
+
 
 }
 
